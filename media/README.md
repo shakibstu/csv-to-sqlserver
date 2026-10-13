@@ -1,6 +1,6 @@
 # CSV to SQL Server logo
 
-`icon.png` is the extension icon and README logo. It was generated using the built-in imagegen tool with a transparent background. The original PNG is preserved here.
+`icon.png` is the extension icon and README logo. It was generated using the built-in imagegen tool with a transparent background, then resized to 256 × 256 pixels for Marketplace compatibility.
 
 Generation prompt:
 
