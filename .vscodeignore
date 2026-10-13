@@ -1,0 +1,15 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+src/**
+tsconfig.json
+**/*.map
+*.vsix
+*.vsix.*
+node_modules/@types/**
+node_modules/typescript/**
+tests/**
+.github/**
+docs/**
+typings/**
+.DS_Store

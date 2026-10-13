@@ -1,0 +1,10 @@
+out
+node_modules
+*.vsix
+*.vsix.*
+.vscode-test
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log

@@ -1,0 +1,132 @@
+body {
+  font-family: var(--vscode-font-family);
+  color: var(--vscode-foreground);
+  background: var(--vscode-editor-background);
+  padding: 16px;
+  line-height: 1.4;
+}
+h1 {
+  margin: 0 0 16px 0;
+  font-size: 1.4em;
+}
+h2 {
+  font-size: 1.1em;
+  margin: 0 0 8px 0;
+}
+h3 {
+  font-size: 1em;
+  margin: 12px 0 6px 0;
+}
+section {
+  border-top: 1px solid var(--vscode-editorWidget-border);
+  padding: 12px 0;
+}
+section:first-of-type {
+  border-top: none;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 6px 0;
+}
+label {
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  gap: 2px;
+}
+input,
+select {
+  background: var(--vscode-input-background);
+  color: var(--vscode-input-foreground);
+  border: 1px solid var(--vscode-input-border, var(--vscode-editorWidget-border));
+  padding: 4px 6px;
+  font-family: inherit;
+  min-width: 120px;
+}
+input[type='checkbox'] {
+  min-width: 0;
+}
+button {
+  background: var(--vscode-button-secondaryBackground, var(--vscode-button-background));
+  color: var(--vscode-button-secondaryForeground, var(--vscode-button-foreground));
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-family: inherit;
+}
+button:hover {
+  background: var(--vscode-button-secondaryHoverBackground, var(--vscode-button-hoverBackground));
+}
+button.primary {
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+}
+button.primary:hover {
+  background: var(--vscode-button-hoverBackground);
+}
+.muted {
+  color: var(--vscode-descriptionForeground);
+  font-size: 0.9em;
+}
+.busy {
+  color: var(--vscode-notificationsInfoIcon-foreground, var(--vscode-foreground));
+  font-style: italic;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.error {
+  color: var(--vscode-errorForeground);
+  margin-top: 12px;
+  white-space: pre-wrap;
+  font-family: var(--vscode-editor-font-family, monospace);
+}
+.error:not(:empty) {
+  border: 1px solid var(--vscode-errorForeground);
+  background: var(--vscode-inputValidation-errorBackground, transparent);
+  padding: 8px 10px;
+  border-radius: 2px;
+}
+#colTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4px;
+}
+#colTable th,
+#colTable td {
+  border: 1px solid var(--vscode-editorWidget-border);
+  padding: 4px 6px;
+  text-align: left;
+  font-size: 0.9em;
+}
+#colTable input[type='text'],
+#colTable input:not([type]) {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.preview {
+  max-height: 260px;
+  overflow: auto;
+  border: 1px solid var(--vscode-editorWidget-border);
+  padding: 6px;
+  font-family: var(--vscode-editor-font-family, monospace);
+  font-size: 0.85em;
+}
+.preview table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.preview th,
+.preview td {
+  border: 1px solid var(--vscode-editorWidget-border);
+  padding: 2px 6px;
+  text-align: left;
+}
+.actions {
+  margin-top: 12px;
+}

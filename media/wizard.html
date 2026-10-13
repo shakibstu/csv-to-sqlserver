@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="%%CSP%%" />
+    <link rel="stylesheet" href="%%STYLE%%" />
+    <title>Import CSV to SQL Server</title>
+  </head>
+  <body>
+    <h1>Import CSV to SQL Server</h1>
+
+    <section>
+      <h2>1. Source</h2>
+      <div class="muted" id="csvPath"></div>
+      <div class="row">
+        <label>
+          Delimiter
+          <select id="delimiter">
+            <option value=",">, (comma)</option>
+            <option value=";">; (semicolon)</option>
+            <option value="\t">\t (tab)</option>
+            <option value="|">| (pipe)</option>
+          </select>
+        </label>
+        <button id="sampleBtn">Sample &amp; Infer Columns</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Connection</h2>
+      <div class="row">
+        <button id="pickConnBtn">Pick SQL Server connection...</button>
+        <div class="muted" id="connSummary">No connection selected.</div>
+      </div>
+    </section>
+
+    <section id="mappingSection" hidden>
+      <h2>3. Target</h2>
+      <div class="row">
+        <label>
+          Database
+          <select id="databaseSelect" hidden></select>
+          <input id="databaseInput" placeholder="(database)" />
+        </label>
+        <label>
+          Mode
+          <select id="mode">
+            <option value="create">Create new table</option>
+            <option value="append">Append to existing table</option>
+            <option value="truncateLoad">Truncate + load existing table</option>
+            <option value="merge">Upsert (MERGE on key)</option>
+          </select>
+        </label>
+        <label> Schema <input id="schema" value="dbo" /> </label>
+        <label> Table <input id="table" /> </label>
+        <label>
+          Batch size <input id="batchSize" type="number" value="1000" min="1" max="10000" />
+        </label>
+      </div>
+
+      <h3>Columns</h3>
+      <p class="muted">Include the columns you want to import; omit identity, computed, or unneeded columns. Type and nullability edits define a new table in Create mode. Existing tables use their actual SQL Server schema.</p>
+      <table id="colTable">
+        <thead>
+          <tr>
+            <th>Include</th>
+            <th>CSV column</th>
+            <th>Target name</th>
+            <th>SQL type</th>
+            <th>Nullable</th>
+            <th>Key (MERGE)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <h3>Preview (first 20 rows)</h3>
+      <div class="preview" id="preview"></div>
+
+      <div class="actions">
+        <button id="runBtn" class="primary" disabled>Run Import</button>
+      </div>
+    </section>
+
+    <div id="status" class="muted" role="status" aria-live="polite"></div>
+    <div id="errors" class="error" role="alert"></div>
+
+    <script nonce="%%NONCE%%" src="%%SCRIPT%%"></script>
+  </body>
+</html>
