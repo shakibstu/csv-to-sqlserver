@@ -1,5 +1,7 @@
 # CSV to SQL Server
 
+<img src="media/icon.png" alt="CSV to SQL Server logo" width="128" height="128">
+
 A VS Code extension that imports CSV files into SQL Server or Azure SQL using validated mappings and atomic database transactions.
 
 ## Requirements

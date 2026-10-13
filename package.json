@@ -1,6 +1,7 @@
 {
   "name": "csv-to-sqlserver",
   "displayName": "CSV to SQL Server",
+  "icon": "media/icon.png",
   "description": "Import CSV files into SQL Server with validated mappings, exact numeric conversion, and transactional loading.",
   "version": "0.2.0",
   "publisher": "your-publisher",
